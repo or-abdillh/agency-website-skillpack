@@ -4,7 +4,14 @@ trigger: always_on
 
 # OFFICIAL AGENCY-GRADE DESIGN & ANTI-SLOP IMPLEMENTATION STANDARD
 
-**Version: 1.0 (Finalized)**
+> **Document Version:** 2.0.0 | **Status:** Approved | **Last Updated:** 2026-09-19  
+> **Governing Agent/Role:** Executive Creative Director & Lead UI/UX Architect
+
+### Revision Changelog
+| Version | Date | Author / Role | Changes Summary |
+|---|---|---|---|
+| 2.0.0 | 2026-09-19 | Executive Creative Director | Mengintegrasikan 5 skill pihak ketiga (antislop-ui, antislop-human, antislop-copywriting, antislop-layoutmobile, frontend-design) sebagai 5-Pillar Quality Armor mengikat |
+| 1.0.0 | 2026-09-19 | Executive Creative Director | Inisialisasi 8 pilar desain kelas agensi, anti-slop visual, Lenis, dual design docs, dan Playwright QA |
 
 ---
 
@@ -13,8 +20,8 @@ trigger: always_on
 Dokumen ini menetapkan standar mutu visual, tata letak antarmuka, dan koreografi interaksi tingkat **Agensi Kreatif Kelas Dunia (Awwwards / FWA / High-End Studio Level)** untuk seluruh website yang dibangun dalam repositori ini.
 
 Aturan ini bersifat:
-- **Non-negotiable** dan **mengikat secara mutlak** bagi seluruh agen AI (dalam tahap ideasi, desain, maupun penulisan kode).
-- Bertujuan menghapus tuntas sindrom **"AI-Slop" & "Cari Aman"** (tampilan datar, kotak-kotak flexbox monoton, zero motion, tanpa tekstur background, dan tanpa keberanian visual).
+- **Non-negotiable** dan **mengikat secara mutlak** bagi seluruh agen AI (dalam tahap ideasi, desain, penulisan copy, maupun penulisan kode).
+- Bertujuan menghapus tuntas sindrom **"AI-Slop" & "Cari Aman"** (tampilan datar, kotak-kotak flexbox monoton, zero motion, tanpa tekstur background, copy artifisial, dan tanpa keberanian visual).
 
 AI wajib memposisikan diri sebagai **Executive Creative Director & Lead UI/UX Engineer** yang merancang landing page untuk klien *high-class/luxury* yang menuntut diferensiasi visual berani, elegan, dan berkesan mendalam.
 
@@ -79,42 +86,123 @@ AI wajib memposisikan diri sebagai **Executive Creative Director & Lead UI/UX En
 
 ---
 
-# 3. TATA KELOLA DOKUMEN DESAIN GANDA
+# 3. THE 5-PILLAR QUALITY ARMOR (MANDATORY EXTERNAL SKILLS INTEGRATION)
 
-Untuk menjaga kejelasan komunikasi dan ketepatan eksekusi, repositori ini membagi dokumen desain menjadi dua peran yang jelas:
+Repositori ini memperkuat standar agensi dengan **5 Skill Pihak Ketiga Spesialis** yang bertindak sebagai **Layer Perlindungan Mutu Utama (*Primary Quality & Compliance Layer*)**. Seluruh agen AI **wajib mematuhi checklist dan batasan teknis dari kelima skill ini**:
 
-### 3.1 `docs/04-design-system.md` (Cross-Functional Stakeholder Document)
-- Dokumen sistem desain yang dirancang agar mudah dibaca, dipahami, dan disepakati oleh seluruh pemangku kepentingan lintas divisi (klien, desainer grafis, copywriter, dan manajemen bisnis).
-- Berisi narasi pilar visual, filosofi warna, dan spesifikasi komponen konseptual.
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    THE 5-PILLAR ANTI-SLOP QUALITY ARMOR                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. frontend-design          → Arah estetika spesifik subjek & no-cliché AI  │
+│ 2. antislop-ui              → Visual & layout dose caps (glass, glow, font) │
+│ 3. antislop-human           → Validasi kontras WCAG AA via Python & a11y    │
+│ 4. antislop-copywriting     → Eliminasi buzzwords AI, no em-dash, real tone │
+│ 5. antislop-layoutmobile    → Mobile-first reflow, fluid clamp, no-leak     │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
-### 3.2 `docs/design.md` (Technical AI Implementation Specification)
-- Dokumen spesifikasi teknis tingkat mendalam yang menjadi **kompas utama AI** dalam tahap koding (`/direct-build`).
-- Wajib memuat **8 Bab Baku**:
-  1. `1. Overview & Creative Thesis` (Arah estetika agensi non-klise)
-  2. `2. Color System & CSS Variable Mapping` (Nilai HEX, semantic role, gradient tokens)
-  3. `3. Typography Architecture & Pairing Specs` (Google Fonts links, scale matrix, line-heights, tracking)
-  4. `4. Layout Engineering & Grid Blueprints` (Bento layout, masonry CSS rules, container constraints)
-  5. `5. Elevation, Depth & Ambient Lighting` (Layering rules, hairline borders, shadows, noise)
-  6. `6. Shapes, Radii & Geometry` (Scale border-radius, pill vs sharp accents)
-  7. `7. Components & Micro-Interactions` (Spesifikasi atomik, hover, active, focus, dan animasi)
-  8. `8. Do's and Don'ts Matrix` (Checklist kepatuhan anti-slop)
+### 3.1 Layer 1: Estetika Subjek & Anti-Cliché (`.agents/skills/frontend-design`)
+- **Grounded in Subject Matter:** Estetika, palet, dan layout wajib diturunkan dari industri dan material riil klien, bukan selera acak AI.
+- **Haram Menggunakan Klise Populer AI:**
+  - *Warm cream background* (`#F4F1EA`) dipadu *terracotta/warm-clay* (`#D97757`).
+  - *Near-black background* dengan aksen *acid-green* atau *vermilion* menyala.
+  - *SaaS-card kit:* memotong konten menjadi kartu-kartu rounded seragam dengan drop shadow identik.
+  - Eyebrow all-caps berlebihan di atas setiap heading dan string meta bertitik tengah (`A · B · C`).
+- **Prinsip "Spend Boldness in One Place":** Pusatkan keberanian visual pada satu elemen memukau (*Hero Showstopper / Interactive Centerpiece*), lalu jaga elemen pendukung di sekitarnya tetap tenang dan disiplin.
+
+### 3.2 Layer 2: Visual & Dose Caps Enforcement (`.agents/skills/antislop-ui`)
+- **Dose Caps Ketat:**
+  - **Glassmorphism:** Maksimal 1–2 elemen (Navbar & Hero Badge).
+  - **Ambient Glow:** Maksimal 1–2 titik fokus aksen. Dilarang menaruh glow di semua kartu/border.
+  - **Shadows:** Hanya sebagai penanda elevasi fungsional, bukan membuat seluruh halaman mengambang.
+  - **Border Radius:** Gunakan hierarki terukur (kartu `rounded-2xl/3xl`, tombol `rounded-full/xl`), dilarang membuat semua elemen berbentuk pill seragam.
+- **Batasan Warna & Dekorasi:**
+  - Palet aktif dibatasi pada 2–3 warna inti + 1 aksen terarah. Dilarang menggunakan gradient biru-ke-ungu generik.
+  - Dilarang menaburkan emoji dekoratif pada teks antarmuka, heading, atau tombol (misal: 🚀, 🔥, ✅).
+  - Ikon wajib relevan secara fungsional; tolak ikon AI generik (sparkle, bintang sihir, robot).
+  - Dilarang membuat capsule badge ("AI Powered") atau status dot pulsing tanpa status sistem riil.
+
+### 3.3 Layer 3: Human & WCAG Contrast Verification (`.agents/skills/antislop-human`)
+- **Standar Rasio Kontras WCAG AA (R-25):**
+  - Teks normal: minimal **4.5:1** terhadap background.
+  - Teks besar (18px+ / bold 14px+) & elemen UI non-teks: minimal **3.0:1**.
+- **Wajib Validasi Menggunakan Tool Kontras:**
+  - Dilarang mengasumsikan atau menebak kontras visual.
+  - Agen **wajib menjalankan skrip Python penguji kontras**:
+    ```bash
+    python3 .agents/skills/antislop-human/contrast-check.py "<HEX_TEKS>" "<HEX_BG>"
+    ```
+  - Jika teks berada di atas foto Unsplash atau gradient, wajib menambahkan scrim/overlay gelap dan menguji titik terburuk (*worst spot*).
+- **Aksesibilitas Keyboard & State:**
+  - Dilarang `outline: none` tanpa pengganti `:focus-visible` berkontras tinggi (3:1).
+  - Seluruh elemen interaktif wajib dapat diakses via Tab/Enter/Space dan modal dapat ditutup via Escape.
+  - Setiap data view wajib memiliki state yang informatif: *loading*, *empty*, dan *error*.
+
+### 3.4 Layer 4: Natural Human Copywriting & Anti-AI Buzzwords (`.agents/skills/antislop-copywriting`)
+- **Eliminasi Total Kosakata AI Kosong:**
+  - DILARANG menggunakan kata-kata klise: *unlock, elevate, empower, delve, showcase, testament, landscape (abstrak), journey, robust, game-changer, next-level, seamless, cutting-edge, revolutionary*.
+  - Ganti dengan bahasa konkret, sederhana, dan langsung menjelaskan manfaat produk.
+- **Larangan Signifikansi Berlebihan & Fabrikasi:**
+  - Dilarang mengklaim "the future of X", "marking a pivotal moment", atau "ushering in a new era".
+  - Dilarang mengarang angka statistik, kutipan testimoni palsu, atau nama klien yang tidak terverifikasi. Jika belum ada data riil, jelaskan produk secara jujur tanpa klaim palsu.
+- **Higiene Teks & Larangan Em Dash:**
+  - Dilarang menggunakan em dash (`—` atau `--`) sebagai penghubung kalimat. Gunakan tanda titik, koma, titik dua, atau kurung.
+  - Gunakan kalimat aktif dengan pelaku (*actor*) yang jelas. Hindari kalimat pasif tanpa subjek (*actorless passive*) atau memberi kata kerja manusiawi pada benda mati (*"dashboard understands"*).
+
+### 3.5 Layer 5: Mobile Layout Architecture & Zero-Leak Reflow (`.agents/skills/antislop-layoutmobile`)
+- **Filosofi Mobile Reflow:** Tampilan mobile adalah **desain berbeda yang di-reflow dengan intensi**, bukan sekadar tampilan desktop yang diperkecil secara kaku.
+- **Arsitektur Multi-State:**
+  - Definisikan layout minimal pada 3 state kontinu (Ponsel <600px, Tablet/Laptop Kecil 600–1024px, Desktop >1024px).
+  - Kolom grid wajib runtuh (*collapse*) secara anggun menjadi 1 kolom pada ponsel.
+- **Dimensi & Spacing Layar Sentuh:**
+  - Gunakan tipografi fluid `clamp()` agar ukuran font menyesuaikan lebar viewport secara mulus.
+  - Dilarang menggunakan `100vh` kaku pada mobile; gunakan unit `dvh` atau `auto` untuk mencegah benturan browser chrome.
+  - Pangkas padding section desktop (96-128px) menjadi sekitar setengahnya pada mobile agar layar tidak penuh ruang kosong.
+  - Target sentuh (*tap targets*) minimal **44 × 44 px** dengan jarak aman antar-tombol.
+  - **Zero Horizontal Overflow Leak:** Halaman ponsel dilarang keras memiliki kebocoran scroll horizontal pada resolusi sempit (360px–390px).
 
 ---
 
-# 4. PROTOKOL TOOLING & MCP INTEGRATION
+# 4. TATA KELOLA DOKUMEN DESAIN GANDA
 
-## 4.1 Context7 MCP Integration (Pustaka Modern & Kompatibilitas)
+Untuk menjaga kejelasan komunikasi dan ketepatan eksekusi, repositori ini membagi dokumen desain menjadi dua peran yang jelas:
+
+### 4.1 `docs/04-design-system.md` (Cross-Functional Stakeholder Document)
+- Dokumen sistem desain yang dirancang agar mudah dibaca, dipahami, dan disepakati oleh seluruh pemangku kepentingan lintas divisi (klien, desainer grafis, copywriter, dan manajemen bisnis).
+- Berisi narasi pilar visual, filosofi warna, dan spesifikasi komponen konseptual.
+
+### 4.2 `docs/design.md` (Technical AI Implementation Specification)
+- Dokumen spesifikasi teknis tingkat mendalam yang menjadi **kompas utama AI** dalam tahap koding (`/direct-build`).
+- Wajib memuat **8 Bab Baku**:
+  1. `1. Overview & Creative Thesis` (Arah estetika agensi non-klise dari `frontend-design`)
+  2. `2. Color System & CSS Variable Mapping` (Nilai HEX lolos uji `antislop-human` contrast checker)
+  3. `3. Typography Architecture & Pairing Specs` (Fluid type `clamp()` & skala kontras tinggi)
+  4. `4. Layout Engineering & Grid Blueprints` (Dynamic Bento, Masonry, responsive multi-state `antislop-layoutmobile`)
+  5. `5. Elevation, Depth & Ambient Lighting` (Dose caps `antislop-ui`: hairline borders, max 1-2 glow/glass)
+  6. `6. Shapes, Radii & Geometry` (Hierarki border-radius terarah)
+  7. `7. Components & Micro-Interactions` (Lenis config, tap targets 44px, interactive states)
+  8. `8. Do's and Don'ts Matrix` (Checklist kepatuhan 5-Pillar Quality Armor)
+
+---
+
+# 5. PROTOKOL TOOLING & MCP INTEGRATION
+
+## 5.1 Context7 MCP Integration (Pustaka Modern & Kompatibilitas)
 - Agen **wajib** menggunakan Context7 MCP (`resolve-library-id` $\rightarrow$ `query-docs`) saat meriset dan mengonfirmasi pustaka mutakhir yang kompatibel dengan framework terkunci (seperti integrasi `@studio-freight/lenis` / `lenis`, `gsap`, `@tresjs/core`, `framer-motion`, `lucide`, dll.).
 - Dilarang menebak sintaks API library pihak ketiga tanpa verifikasi dokumentasi mutakhir.
 
-## 4.2 Find-Skills Integration (Pemberdayaan Skill Terbuka)
+## 5.2 Find-Skills Integration (Pemberdayaan Skill Terbuka)
 - Agen diperbolehkan dan diarahkan untuk memanfaatkan `find-skills` (`npx skills find [query]`) untuk menemukan dan mengadopsi skill pendukung dari ekosistem open-agent yang relevan dengan kebutuhan animasi, 3D, atau optimasi performa.
 
-## 4.3 Playwright MCP Visual Quality Gate (Validasi Realtime)
+## 5.3 Playwright MCP Visual Quality Gate (Validasi Realtime)
 Pada tahap `/direct-build`:
 - Setelah menulis kode, agen **wajib menjalankan dev server** dan menggunakan Playwright MCP:
   1. `browser_navigate` ke URL preview lokal (misal: `http://localhost:3000`).
   2. `browser_take_screenshot` pada dua viewport:
      - **Desktop Viewport:** 1440 × 900 px
      - **Mobile Viewport:** 390 × 844 px
-  3. Lakukan inspeksi visual mandiri (*self-critique*): pastikan tidak ada layout breaking, tipografi memiliki kontras terbaca, gambar Unsplash termuat sempurna, dan nuansa agensi premium tercapai sebelum menyatakan tugas selesai.
+  3. Lakukan inspeksi visual mandiri (*self-critique*):
+     - Uji terhadap checklist `antislop-layoutmobile`: pastikan **zero horizontal overflow**, tombol sentuh mudah ditekan, dan nav tertata rapi.
+     - Uji terhadap checklist `antislop-human`: pastikan kontras terbaca jelas dan teks tidak terpotong.
+     - Pastikan gambar Unsplash termuat sempurna dan nuansa agensi premium non-slop tercapai sebelum menyatakan tugas selesai.
