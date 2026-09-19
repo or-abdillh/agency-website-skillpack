@@ -65,6 +65,7 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
 ├── workflows/
 │   └── lead-ideate-pipeline.md       # Orkestrasi ideasi, referensi UI, audit & build
 └── skills/
+    ├── skillpack-guide/              # Workflow copilot & diagnosa status pipeline terminal
     ├── 01-collect-lead-master-data/  # Riset intelijen bisnis lokal
     ├── 02-extract-design-direction/  # Ekstraksi visual & palet dari logo/IG
     ├── 03-generate-brand-identity/   # Positioning, tagline, tone of voice
@@ -80,6 +81,9 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
 ---
 
 ## 4. Alur Kerja Standar Agen (Workflow Execution Lifecycle)
+
+### 0. Navigasi & Status Diagnosis (Kapan Saja)
+- Jalankan `/skillpack-guide` atau ketik `bash .agents/skills/skillpack-guide/scripts/status.sh` di terminal untuk melihat status kemajuan pipeline proyek saat ini dan mendapatkan instruksi langkah konkret berikutnya.
 
 ### Fase 1: Discovery & Strategy (Dokumentasi `docs/`)
 Ketika user memulai eksplorasi lead bisnis baru:

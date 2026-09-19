@@ -130,6 +130,7 @@ flowchart TD
 
 | Skill / Perintah | Peran Persona | Output Utama | Deskripsi & Kegunaan |
 |---|---|---|---|
+| [`/skillpack-guide`](.agents/skills/skillpack-guide/SKILL.md) | Principal Workflow Architect | Diagnosa status CLI & Next Action | Membimbing developer di terminal, memindai progress pipeline saat ini, dan merekomendasikan perintah berikutnya. |
 | [`/collect-lead-master-data`](.agents/skills/01-collect-lead-master-data/SKILL.md) | Senior Business Intelligence | `docs/00-master-data.md` | Menggali profil bisnis, analisis ulasan Google Maps riil, dan celah kompetitor lokal terdekat. |
 | [`/extract-design-direction`](.agents/skills/02-extract-design-direction/SKILL.md) | Senior Brand Designer | `docs/01-design-direction.md` | Mengekstrak palet warna HEX autentik, rasio kontras WCAG, mood visual, dan theming dari logo & IG. |
 | [`/generate-brand-identity`](.agents/skills/03-generate-brand-identity/SKILL.md) | Senior Brand Strategist | `docs/02-brand-identity.md` | Merumuskan value proposition, hook tagline ramah konversi, tone of voice, dan resonansi emosional. |
@@ -221,6 +222,30 @@ Setiap dokumen diawali format header wajib:
 ---
 
 ## 🏁 Panduan Mulai Cepat (Quick Start)
+
+### ⚡ 1-Line Quick Installation (Any Existing Project)
+
+Pasang dan kunci seluruh ekosistem skill pack ini ke proyek apa pun secara instan via satu baris perintah:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/or-abdillh/agency-website-skillpack/main/install.sh | bash
+```
+
+> *Skrip installer interaktif ini akan otomatis mendeteksi framework proyek target Anda (Nuxt, Next.js, Vite+React, Astro, atau SvelteKit), mengunci arsitektur teknis yang sesuai, dan memasang seluruh rules, skills, serta workflow.*
+
+---
+
+### 0. Navigasi & Diagnosis Pipeline Kapan Saja
+Bingung harus mulai dari mana atau apa langkah selanjutnya? Panggil copilot alur kerja:
+```bash
+/skillpack-guide
+```
+Atau jalankan skrip status terminal kapan saja langsung dari bash shell:
+```bash
+bash .agents/skills/skillpack-guide/scripts/status.sh
+```
+
+---
 
 ### 1. Eksekusi Riset & Konseptualisasi Brand
 Mulai dengan memasukkan identitas prospek bisnis target:
