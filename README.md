@@ -19,16 +19,6 @@
 
 ---
 
-## 📌 Rekomendasi Profil GitHub Repository
-
-| Atribut | Rekomendasi Pilihan |
-|---|---|
-| **Repository Name** | `agency-website-skillpack` *(alternatif: `antislop-landing-agent` / `lead-to-landing-engine`)* |
-| **Short Description** | `⚡ Agency-grade agentic skill pack for Antigravity & AI agents. Transforms raw local business leads into bespoke, high-converting, anti-slop landing pages (Bento grids, Lenis smooth scroll, curated visual tokens) in minutes. Production-ready across Nuxt 4, Next.js 15, React, Astro & SvelteKit.` |
-| **Topics / Tags** | `ai-agents`, `antigravity`, `landing-page-generator`, `agency-design`, `anti-slop`, `nuxt4`, `nextjs15`, `tailwind-v4`, `lenis-scroll`, `playwright-testing` |
-
----
-
 ## 🛑 Masalah yang Diatasi (The Problem)
 
 Membangun initial landing page untuk prospek bisnis lokal atau klien *high-class* biasanya terjebak di antara dua dilema besar:
