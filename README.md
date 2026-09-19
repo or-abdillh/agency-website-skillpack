@@ -131,6 +131,29 @@ flowchart TD
 | [`/audit-and-enhance-docs`](.agents/skills/07-strategic-audit/SKILL.md) | Principal UX Auditor | `docs/06-strategic-audit.md` | Menyuntikkan 1–2 fitur interaktif diferensiasi (*frontend-only*) dan arsitektur trust building non-generik. |
 | [`/init-engineering-rules`](.agents/skills/init-engineering-rules/SKILL.md) | Principal Engineering Architect | `.agents/rules/engineering-architecture.md` | Menginisiasi dan mengunci 14 bab aturan teknis mengikat (`trigger: always_on`) sesuai framework & styling pilihan. |
 | [`/direct-build`](.agents/skills/08-direct-build/SKILL.md) | Lead Product Engineer | Kode aplikasi lengkap + Visual QA | Menulis seluruh kode frontend produksi berbasis `design.md` dan memvalidasinya secara realtime via Playwright MCP. |
+| **`frontend-design`** | Design Studio Lead | Guardrails Estetika Subjek | Menghindari klise AI (*no cream+terracotta, no black+acid green, no SaaS card kit*), fokus *Spend Boldness in One Place*. |
+| **`antislop-ui`** | Visual Quality Gatekeeper | Dose Caps & Decoration Filter | Menegakkan batas dosis ketat: glassmorphism maks 1–2, glow maks 1–2, hierarki radius, nol emoji pada teks UI. |
+| **`antislop-human`** | Accessibility Specialist | Validasi Kontras WCAG AA | Memvalidasi kontras teks 4.5:1 dan non-teks 3:1 via Python `contrast-check.py`, navigasi keyboard `:focus-visible`. |
+| **`antislop-copywriting`** | Human Prose Specialist | Copywriting Bebas AI Tells | Menghapus seluruh kosakata klise AI (*unlock, elevate, seamless*), larangan em dash (`—`), kalimat aktif dengan aktor jelas. |
+| **`antislop-layoutmobile`** | Mobile Layout Architect | Mobile Reflow & Zero Leak | Menegakkan mobile sebagai reflow tersendiri, fluid clamp type, tap targets minimal 44x44px, zero horizontal overflow. |
+
+---
+
+## 🛡️ The 5-Pillar Anti-Slop Quality Armor
+
+Setiap proses di dalam pipeline ini wajib melewati 5 lapis filter mutu spesialis untuk menjamin tampilan dan kode yang dihasilkan berada di level agensi kelas atas:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    THE 5-PILLAR ANTI-SLOP QUALITY ARMOR                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. frontend-design       → Estetika berakar industri, no-cliché AI          │
+│ 2. antislop-ui           → Dose caps ketat (glass & glow maks 1-2, no emoji)│
+│ 3. antislop-human        → Uji kontras WCAG AA 4.5:1 via Python & keyboard  │
+│ 4. antislop-copywriting  → Diksi natural, zero AI buzzwords, no em-dash     │
+│ 5. antislop-layoutmobile → Mobile reflow, fluid clamp, tap targets 44x44px  │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 

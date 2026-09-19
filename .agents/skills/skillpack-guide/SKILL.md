@@ -1,12 +1,12 @@
 ---
 name: skillpack-guide
-description: Membantu developer memahami alur lengkap, mendiagnosis status pipeline saat ini di terminal, dan memberikan panduan perintah berikutnya untuk Agency Website Skill Pack.
+description: Membantu developer memahami alur lengkap, mendiagnosis status pipeline saat ini di terminal, dan memberikan panduan perintah berikutnya untuk Agency Website Skill Pack dengan 5-Pillar Quality Armor.
 ---
 
 Kamu bertindak sebagai **Principal Workflow Architect & Developer Experience (DX) Guide**.
 
 Tujuan:
-Membimbing developer memahami dan menjalankan alur kerja Agency Website Skill Pack secara efisien melalui terminal/chat AI, mendiagnosis status progres proyek saat ini secara dinamis, dan merekomendasikan langkah konkret berikutnya tanpa kebingungan.
+Membimbing developer memahami dan menjalankan alur kerja Agency Website Skill Pack secara efisien melalui terminal/chat AI, mendiagnosis status progres proyek saat ini secara dinamis, memastikan kepatuhan terhadap **5-Pillar Quality Armor** (`frontend-design`, `antislop-ui`, `antislop-human`, `antislop-copywriting`, `antislop-layoutmobile`), dan merekomendasikan langkah konkret berikutnya tanpa kebingungan.
 
 ---
 
@@ -35,7 +35,7 @@ Setiap kali skill ini dipanggil (via `/skillpack-guide`, `/workflow-guide`, atau
 3. **Berikan Panduan Langkah Berikutnya (Next Recommended Action):**
    - Tuliskan perintah slash persis yang harus diketikkan developer (misal: `/generate-brand-identity`).
    - Jelaskan input yang dibutuhkan (misal: nama bisnis, lampiran screenshot logo/feed, atau pilihan framework).
-   - Berikan tips kuratorial anti-slop yang relevan dengan langkah tersebut.
+   - Berikan tips kuratorial anti-slop yang relevan berdasarkan **5-Pillar Quality Armor** (misal: uji kontras via `contrast-check.py`, batasan dose caps, atau no AI buzzwords).
 
 ---
 
@@ -65,24 +65,38 @@ Setiap kali skill ini dipanggil (via `/skillpack-guide`, `/workflow-guide`, atau
 
 - **Tujuan:** Menerjemahkan data profil bisnis dan palet warna menjadi positioning brand, hook tagline persuasif, dan persona pelanggan.
 - **Input yang Digunakan:** `@docs/00-master-data.md` dan `@docs/01-design-direction.md`.
-- **Tips Agensi:** Pastikan tone of voice tidak klise; pilih karakter yang tegas (misal: *Gentle Clinical Sanctuary* atau *Warm Artisanal*).
+- **Quality Armor Guardrails (`antislop-copywriting`):**
+  - Bebas dari kosakata AI klise (*unlock, elevate, empower, seamless*).
+  - Tanpa em dash (`—` / `--`), gunakan tanda baca alami.
+  - Kalimat aktif dengan aktor jelas dan value proposition tajam.
+
+---
+
+## 🛡️ The 5-Pillar Anti-Slop Quality Armor
+
+Setiap langkah dalam pipeline ini dipagari oleh 5 skill spesialis:
+1. `frontend-design`: Estetika subjek spesifik, no-cliché AI, prinsip *Spend Boldness in One Place*.
+2. `antislop-ui`: Dose caps ketat (glass & glow maks 1–2), hierarki radius, no emoji pada teks UI.
+3. `antislop-human`: Validasi WCAG AA (4.5:1) via Python `contrast-check.py`, keyboard accessibility.
+4. `antislop-copywriting`: Kalimat aktif, no AI buzzwords, zero em-dash, bukti riil non-fabrikasi.
+5. `antislop-layoutmobile`: Mobile reflow layout, fluid clamp type, tap targets 44x44px, zero leak.
 
 ---
 
 ## 🛠️ Command Reference & Cheat-Sheet
 
-| Tahap | Perintah Slash | Input Utama | Output |
+| Tahap | Perintah Slash | Quality Armor Layer | Output |
 |---|---|---|---|
-| **1. Riset** | `/collect-lead-master-data` | Nama, Kategori, Kota | `docs/00-master-data.md` |
-| **2. Visual** | `/extract-design-direction` | Lampiran Logo & Feed IG | `docs/01-design-direction.md` |
-| **3. Brand** | `/generate-brand-identity` | Konteks docs/00 & docs/01 | `docs/02-brand-identity.md` |
-| **4. Konsep** | `/generate-website-concept` | Riset Context7 MCP | `docs/03-website-concept.md` |
-| **4b. Kalibrasi** | `/harmonize-design-reference` | Screenshot UI (PLAN Mode) | Overwrite `docs/03` |
-| **5. Desain** | `/generate-design-system` | Konsep & Standar Agensi | `docs/04` & `docs/design.md` |
-| **6. PRD** | `/generate-prd` | Scope MVP MoSCoW | `docs/05-prd.md` |
-| **7. Audit** | `/audit-and-enhance-docs` | Fitur diferensiasi frontend | `docs/06-strategic-audit.md` |
+| **1. Riset** | `/collect-lead-master-data` | Data Riil Google Maps | `docs/00-master-data.md` |
+| **2. Visual** | `/extract-design-direction` | `antislop-human` (contrast-check.py) + `antislop-ui` | `docs/01-design-direction.md` |
+| **3. Brand** | `/generate-brand-identity` | `antislop-copywriting` + `frontend-design` | `docs/02-brand-identity.md` |
+| **4. Konsep** | `/generate-website-concept` | `frontend-design` + `antislop-ui` + Context7 | `docs/03-website-concept.md` |
+| **4b. Kalibrasi** | `/harmonize-design-reference` | Traffic Light PLAN Mode | Overwrite `docs/03` |
+| **5. Desain** | `/generate-design-system` | `antislop-ui` + `antislop-human` + `layoutmobile` | `docs/04` & `docs/design.md` |
+| **6. PRD** | `/generate-prd` | `antislop-copywriting` + MoSCoW MVP | `docs/05-prd.md` |
+| **7. Audit** | `/audit-and-enhance-docs` | Interactive Differentiators & Trust | `docs/06-strategic-audit.md` |
 | **A. Arsitektur** | `/init-engineering-rules` | Nuxt/Next/React/Astro/Svelte | `.agents/rules/engineering-architecture.md` |
-| **B. Build & QA** | `/direct-build` | Koding langsung + Playwright | Production Landing Page |
+| **B. Build & QA** | `/direct-build` | 5-Pillar Full Compliance + Playwright MCP | Production Landing Page |
 
 > [!TIP]
 > Anda juga dapat menjalankan skrip status terminal kapan saja langsung dari bash shell:  
