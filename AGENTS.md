@@ -19,9 +19,10 @@
      - `antislop-copywriting`: Diksi alami tanpa kata-kata klise AI (*unlock, elevate, empower, seamless, dll.*), larangan klaim fabrikasi, larangan em dash (`—` / `--`), dan kalimat aktif dengan aktor jelas.
      - `antislop-layoutmobile`: Mobile sebagai layout reflow tersendiri, fluid typography `clamp()`, larangan `100vh` kaku (wajib `dvh`/`auto`), tap targets minimal 44 × 44 px, dan *zero horizontal overflow leak*.
 
-3. **Step-by-Step Pipeline (Single Responsibility per Turn):**
-   - Proses pembuatan dokumen ideasi dan strategi di `docs/` dijalankan secara bertahap satu per satu (Step 1 s.d. Step 7).
-   - Setiap langkah menghasilkan artefak dokumen Markdown definitif yang tersimpan rapi di direktori `docs/` sebelum melangkah ke tahap berikutnya.
+3. **Autonomous Chained Execution with In-Line Interactive Gates (`/build-site`):**
+   - Saat workflow orkestrator dipanggil via **/build-site**, agen bertindak sebagai **Autonomous Agency Lead** yang mengeksekusi seluruh siklus kerja secara **berkesinambungan tanpa henti** dari Step 1 hingga Phase B.
+   - **DILARANG** menghentikan sesi atau menyuruh pengguna mengetikkan perintah manual selanjutnya jika dependensi konteks sudah terpenuhi atau dapat diturunkan.
+   - Jika terdapat input kritis atau keputusan yang wajib dari user (seperti lampiran logo di Step 2 atau pemilihan framework di Phase A), agen **wajib bertanya langsung secara in-line di sesi aktif** tanpa menutup alur kerja. Begitu user merespons, agen otomatis melanjutkan seluruh tahap yang tersisa hingga selesai.
 
 4. **Dual-Document Design Architecture:**
    - `docs/04-design-system.md`: Dokumen sistem desain yang ramah dibaca dan dipahami oleh pemangku kepentingan lintas divisi (*stakeholders*).
@@ -71,7 +72,7 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
 │   ├── agency-design-standard.md     # Standar visual agensi v2.0 & 5-Pillar Armor (trigger: always_on)
 │   └── document-governance.md        # Standar tata kelola SemVer (trigger: always_on)
 ├── workflows/
-│   └── lead-ideate-pipeline.md       # Orkestrasi ideasi, referensi UI, audit & build
+│   └── build-site.md                 # Workflow end-to-end autonomous chained execution
 └── skills/
     ├── skillpack-guide/              # Workflow copilot & diagnosa status pipeline terminal
     ├── 01-collect-lead-master-data/  # Riset intelijen bisnis lokal
@@ -95,49 +96,28 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
 
 ---
 
-## 4. Alur Kerja Standar Agen (Workflow Execution Lifecycle)
+## 4. Dua Mode Eksekusi Alur Kerja
 
-### 0. Navigasi & Status Diagnosis (Kapan Saja)
-- Jalankan `/skillpack-guide` atau ketik `bash .agents/skills/skillpack-guide/scripts/status.sh` di terminal untuk melihat status kemajuan pipeline proyek saat ini dan mendapatkan instruksi langkah konkret berikutnya.
+### Mode 1: Full-Auto Autonomous Orchestrator (`/build-site`)
+- **Perintah Tunggal:** Cukup ketik **/build-site [Nama Bisnis, Kategori, Kota]**.
+- **Perilaku:** AI otomatis mengeksekusi Step 1 s.d. Phase B secara berkesinambungan tanpa henti.
+- **In-Line Interactive Gates:**
+  - *Gate Logo/Feed:* Jika logo tidak diunggah, AI menanyakan opsi untuk melampirkan sekarang atau mengizinkan AI merumuskan palet warna secara cerdas dari data industri, lalu langsung lanjut.
+  - *Gate UI Reference:* Jika tidak ada screenshot UI inspirasi, tahap 4b dilewati (*skip*) secara otomatis.
+  - *Gate Arsitektur:* Jika framework belum terkunci, AI menanyakan opsi preset, menguncinya, lalu langsung mengeksekusi koding dan Playwright QA.
 
-### Fase 1: Discovery & Strategy (Dokumentasi `docs/`)
-Ketika user memulai eksplorasi lead bisnis baru:
-1. Jalankan `/collect-lead-master-data` $\rightarrow$ Simpan di `docs/00-master-data.md`.
-2. Minta user mengunggah logo/screenshot feed $\rightarrow$ Jalankan `/extract-design-direction` $\rightarrow$ Simpan di `docs/01-design-direction.md`.
-   - *Companion Layer:* Wajib uji kontras WCAG AA (4.5:1) menggunakan `python3 .agents/skills/antislop-human/contrast-check.py` untuk setiap pasangan teks & latar.
-3. Jalankan `/generate-brand-identity` $\rightarrow$ Simpan di `docs/02-brand-identity.md`.
-   - *Companion Layer:* Terapkan `antislop-copywriting`: dilarang menggunakan buzzwords klise (*unlock, elevate, dll.*), dilarang em dash (`—`), dan gunakan kalimat aktif yang ramah konversi.
-4. Jalankan `/generate-website-concept` $\rightarrow$ Simpan di `docs/03-website-concept.md`.
-   - *Companion Layer:* Terapkan `frontend-design` (hindari klise warna AI dan terapkan prinsip *Spend Boldness in One Place*) dan `antislop-ui` (dose caps glass & glow maks 1–2).
-   - Gunakan **Context7 MCP** untuk riset pustaka animasi/3D dan `find-skills` jika perlu.
-5. *(Opsional / Kalibrasi Visual)* Jika user mengunggah screenshot referensi UI/landing page:
-   - Jalankan `/harmonize-design-reference` dalam **PLAN MODE**.
-   - Tampilkan dekonstruksi dan evaluasi *Traffic Light Matrix* (Green/Yellow/Red).
-   - Minta persetujuan user.
-   - Setelah disetujui, lakukan overwrite langsung ke `docs/03-website-concept.md`, sinkronkan `docs/04-design-system.md` dan `docs/05-prd.md`, lalu naikkan versi SemVer.
-6. Jalankan `/generate-design-system` $\rightarrow$ Hasilkan `docs/04-design-system.md` (stakeholders) dan `docs/design.md` (panduan teknikal AI).
-   - *Companion Layer:* Terapkan `antislop-ui` (token mapping & dose caps), `antislop-human` (kontras non-teks 3:1), dan `antislop-layoutmobile` (fluid typography `clamp()`, tap targets 44x44px).
-7. Jalankan `/generate-prd` $\rightarrow$ Simpan di `docs/05-prd.md`.
-8. Jalankan `/audit-and-enhance-docs` $\rightarrow$ Simpan di `docs/06-strategic-audit.md`.
-
-### Fase 2: Architecture Locking
-Sebelum memulai koding:
-1. Jalankan `/init-engineering-rules` untuk mengunci stack yang dipilih proyek (misal: Nuxt 4, Next.js 15, React 19 + Vite, Astro 5, SvelteKit, atau custom stack).
-2. Pastikan file `.agents/rules/engineering-architecture.md` memiliki 14 bab lengkap dan frontmatter `trigger: always_on`.
-
-### Fase 3: Production Implementation & Visual QA
-1. Jalankan `/direct-build`.
-2. Agen langsung mengimplementasikan kode aplikasi secara menyeluruh mengacu pada `docs/design.md`, `engineering-architecture.md`, dan **5-Pillar Quality Armor**:
-   - Konfigurasi framework & plugin (termasuk Lenis Smooth Scroll & Tailwind v4).
-   - Stylesheet utama dengan CSS variables, ambient glows (maks 1–2), hairline borders, dan noise overlays.
-   - Komponen Base & UI atomik dengan accessible `:focus-visible` dan tap target minimal 44 × 44 px.
-   - Dynamic Bento/Masonry Sections yang runtuh (*reflow*) ke 1 kolom pada mobile tanpa kebocoran horizontal.
-   - Copywriting bersih bebas kata klise AI dan tanpa em dash.
-   - Layout utama dan Halaman Utama (`index`).
-3. **Quality Gate Real-Time via Playwright MCP:**
-   - Buka preview lokal via `browser_navigate`.
-   - Ambil screenshot desktop (1440px) dan mobile (390px) via `browser_take_screenshot`.
-   - Lakukan inspeksi visual mandiri menguji checklist `antislop-layoutmobile` (zero horizontal overflow) dan `antislop-human` (kontras & keterbacaan) sebelum menyatakan tugas selesai.
+### Mode 2: Modular / Granular Commands (Pembaruan Terisolasi)
+Developer dapat memanggil perintah slash satuan kapan saja untuk melakukan revisi atau regenerasi terfokus pada berkas tertentu:
+- `/collect-lead-master-data` $\rightarrow$ Perbarui profil `docs/00-master-data.md`.
+- `/extract-design-direction` $\rightarrow$ Re-ekstrak warna `docs/01-design-direction.md`.
+- `/generate-brand-identity` $\rightarrow$ Kalibrasi ulang positioning `docs/02-brand-identity.md`.
+- `/generate-website-concept` $\rightarrow$ Romba k ulang konsep `docs/03-website-concept.md`.
+- `/harmonize-design-reference` $\rightarrow$ Selaraskan screenshot UI baru ke `docs/03`.
+- `/generate-design-system` $\rightarrow$ Regenerasi `docs/04` dan `docs/design.md`.
+- `/generate-prd` $\rightarrow$ Perbarui spesifikasi `docs/05-prd.md`.
+- `/audit-and-enhance-docs` $\rightarrow$ Perbarui audit diferensiasi `docs/06-strategic-audit.md`.
+- `/init-engineering-rules` $\rightarrow$ Ganti stack framework di `.agents/rules/engineering-architecture.md`.
+- `/direct-build` $\rightarrow$ Eksekusi koding ulang dan Playwright Visual QA.
 
 ---
 
