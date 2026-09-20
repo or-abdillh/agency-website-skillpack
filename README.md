@@ -13,9 +13,36 @@
 
 **Orkestrasi AI Agentic terintegrasi untuk mengubah data mentah klien bisnis/brand lokal (logo, Instagram feed, Google Maps reviews) menjadi landing page produksi kelas agensi (Awwwards/FWA level) dalam hitungan menit.**
 
-[Masalah yang Diatasi](#-masalah-yang-diatasi-the-problem) • [Solusi & Filosofi](#-solusi-dan-filosofi-the-agency-model) • [Alur Kerja Pipeline](#-alur-kerja-pipeline-end-to-end) • [Katalog Skill](#-katalog-lengkap-skill) • [Panduan Mulai Cepat](#-panduan-mulai-cepat-quick-start) • [Dokumen Desain Ganda](#-arsitektur-dokumen-desain-ganda)
+[Cara Pakai Cepat](#-the-1-command-agency-experience) • [Masalah yang Diatasi](#-masalah-yang-diatasi-the-problem) • [Solusi & Filosofi](#-solusi-dan-filosofi-the-agency-model) • [Alur Kerja Pipeline](#-alur-kerja-pipeline-end-to-end) • [Katalog Skill](#-katalog-lengkap-skill) • [Panduan Mulai Cepat](#-panduan-mulai-cepat-quick-start) • [Dokumen Desain Ganda](#-arsitektur-dokumen-desain-ganda)
 
 </div>
+
+---
+
+## ⚡ The 1-Command Agency Experience
+
+Jalankan seluruh siklus agensi secara otomatis dari riset pasar hingga koding siap produksi cukup dengan **satu baris perintah**:
+
+```bash
+/build-site [Nama Bisnis, Kategori/Layanan, Kota]
+```
+
+#### 💡 Contoh Nyata:
+```bash
+/build-site SmileCraft Dental, Klinik Gigi Estetik & Veneer, Surabaya
+```
+
+> **Apa yang terjadi selanjutnya secara otomatis?**  
+> 1. 🔍 **Intelligence Gathering:** AI meriset reputasi Google Maps lokal, testimoni autentik, dan kelemahan kompetitor sekitar (`docs/00-master-data.md`).
+> 2. 🎨 **Visual Palette Extraction:** AI mengekstrak moodboard dan warna brand asli, tervalidasi WCAG AA via skrip Python (`docs/01-design-direction.md`).
+> 3. 🎯 **Brand Positioning:** Merumuskan value proposition tajam, tone of voice alami anti-slop, tanpa kata klise AI, dan tanpa em dash (`docs/02-brand-identity.md`).
+> 4. 🏛️ **Agency Art Direction:** Merancang blueprint Hero showstopper, Dynamic Bento Grid, dan atmospheric depth (`docs/03-website-concept.md`).
+> 5. 📐 **Dual Design Architecture:** Menghasilkan panduan stakeholders (`docs/04`) dan spesifikasi teknikal 8-bab (`docs/design.md`) berstandar fluid clamp typography.
+> 6. 📋 **PRD & Strategic Audit:** Menyusun batasan MoSCoW MVP dan menyuntikkan 1–2 fitur diferensiasi interaktif (`docs/05` & `docs/06`).
+> 7. 🔒 **Engineering Architecture Lock:** Mengunci aturan teknis framework pilihan (Nuxt 4 / Next 15 / React / Astro / SvelteKit).
+> 8. 💻 **Direct Build & Playwright Visual QA:** AI langsung menulis kode frontend produksi lengkap dan memvalidasi tampilan Desktop (1440px) & Mobile (390px) via Playwright MCP.
+> 
+> *Catatan: Jika butuh lampiran logo atau konfirmasi framework, AI akan bertanya langsung secara in-line tanpa menutup alur kerja, lalu otomatis lanjut hingga selesai!*
 
 ---
 
@@ -120,6 +147,7 @@ flowchart TD
 
 | Skill / Perintah | Peran Persona | Output Utama | Deskripsi & Kegunaan |
 |---|---|---|---|
+| [**/build-site**](.agents/workflows/build-site.md) | Principal Agency Lead | Autonomous End-to-End Delivery | **Workflow Autopilot:** Mengeksekusi seluruh siklus dari riset lead, brand, konsep, design system, hingga live coding & Playwright QA secara berkesinambungan tanpa henti. |
 | [`/skillpack-guide`](.agents/skills/skillpack-guide/SKILL.md) | Principal Workflow Architect | Diagnosa status CLI & Next Action | Membimbing developer di terminal, memindai progress pipeline saat ini, dan merekomendasikan perintah berikutnya. |
 | [`/collect-lead-master-data`](.agents/skills/01-collect-lead-master-data/SKILL.md) | Senior Business Intelligence | `docs/00-master-data.md` | Menggali profil bisnis, analisis ulasan Google Maps riil, dan celah kompetitor lokal terdekat. |
 | [`/extract-design-direction`](.agents/skills/02-extract-design-direction/SKILL.md) | Senior Brand Designer | `docs/01-design-direction.md` | Mengekstrak palet warna HEX autentik, rasio kontras WCAG, mood visual, dan theming dari logo & IG. |
@@ -248,8 +276,24 @@ curl -fsSL https://raw.githubusercontent.com/or-abdillh/agency-website-skillpack
 
 ---
 
-### 0. Navigasi & Diagnosis Pipeline Kapan Saja
-Bingung harus mulai dari mana atau apa langkah selanjutnya? Panggil copilot alur kerja:
+### 🚀 Opsi Utama: 1-Command Autonomous Delivery (/build-site)
+
+Jalankan seluruh siklus agensi dari pengumpulan data bisnis, riset Google Maps, ekstraksi palet, penulisan konsep, spesifikasi teknis, hingga koding dan visual QA secara otomatis tanpa henti:
+
+```bash
+/build-site [Nama Bisnis, Kategori, Kota]
+```
+
+> *AI akan mengeksekusi Step 1 s.d. Phase B secara berkesinambungan. Jika memerlukan input spesifik (seperti unggahan logo atau pilihan framework), AI akan bertanya langsung secara in-line tanpa menghentikan sesi.*
+
+---
+
+### 🛠️ Opsi Alternatif: Eksekusi Modular (Per-Tahap)
+
+Jika Anda ingin menjalankan atau meregenerasi tahap tertentu secara terisolasi:
+
+#### 0. Navigasi & Diagnosis Pipeline Kapan Saja
+Panggil copilot alur kerja:
 ```bash
 /skillpack-guide
 ```
@@ -258,14 +302,12 @@ Atau jalankan skrip status terminal kapan saja langsung dari bash shell:
 bash .agents/skills/skillpack-guide/scripts/status.sh
 ```
 
----
-
-### 1. Eksekusi Riset & Konseptualisasi Brand
+#### 1. Eksekusi Riset & Konseptualisasi Brand
 Mulai dengan memasukkan identitas prospek bisnis target:
 ```bash
 /collect-lead-master-data
 ```
-*Unggah logo dan tangkapan layar feed media sosial, lalu lanjutkan langkah 2 hingga 4:*
+*Lanjutkan ke langkah 2 hingga 4:*
 ```bash
 /extract-design-direction
 /generate-brand-identity
