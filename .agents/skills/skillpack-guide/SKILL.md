@@ -59,10 +59,15 @@ Setiap kali skill ini dipanggil (via `/skillpack-guide`, `/workflow-guide`, atau
 
 ---
 
-## ⚡ Langkah Selanjutnya yang Direkomendasikan:
+## ⚡ Mode Eksekusi yang Direkomendasikan:
 
+### Opsi A: Autonomous End-to-End Orchestrator (Paling Direkomendasikan)
+> Ketik perintah: **/build-site [Nama Bisnis, Kategori, Kota]**
+- Menjalankan seluruh siklus dari Step 1 hingga Phase B secara berkesinambungan tanpa henti.
+- AI hanya akan berinteraksi jika butuh input penting (misal upload logo atau konfirmasi framework).
+
+### Opsi B: Eksekusi Modular Satuan (Langkah Selanjutnya Saat Ini)
 > Jalankan perintah: **/generate-brand-identity**
-
 - **Tujuan:** Menerjemahkan data profil bisnis dan palet warna menjadi positioning brand, hook tagline persuasif, dan persona pelanggan.
 - **Input yang Digunakan:** `@docs/00-master-data.md` dan `@docs/01-design-direction.md`.
 - **Quality Armor Guardrails (`antislop-copywriting`):**
@@ -85,18 +90,19 @@ Setiap langkah dalam pipeline ini dipagari oleh 5 skill spesialis:
 
 ## 🛠️ Command Reference & Cheat-Sheet
 
-| Tahap | Perintah Slash | Quality Armor Layer | Output |
+| Tahap | Perintah Slash | Mode Eksekusi | Output |
 |---|---|---|---|
-| **1. Riset** | `/collect-lead-master-data` | Data Riil Google Maps | `docs/00-master-data.md` |
-| **2. Visual** | `/extract-design-direction` | `antislop-human` (contrast-check.py) + `antislop-ui` | `docs/01-design-direction.md` |
-| **3. Brand** | `/generate-brand-identity` | `antislop-copywriting` + `frontend-design` | `docs/02-brand-identity.md` |
-| **4. Konsep** | `/generate-website-concept` | `frontend-design` + `antislop-ui` + Context7 | `docs/03-website-concept.md` |
-| **4b. Kalibrasi** | `/harmonize-design-reference` | Traffic Light PLAN Mode | Overwrite `docs/03` |
-| **5. Desain** | `/generate-design-system` | `antislop-ui` + `antislop-human` + `layoutmobile` | `docs/04` & `docs/design.md` |
-| **6. PRD** | `/generate-prd` | `antislop-copywriting` + MoSCoW MVP | `docs/05-prd.md` |
-| **7. Audit** | `/audit-and-enhance-docs` | Interactive Differentiators & Trust | `docs/06-strategic-audit.md` |
-| **A. Arsitektur** | `/init-engineering-rules` | Nuxt/Next/React/Astro/Svelte | `.agents/rules/engineering-architecture.md` |
-| **B. Build & QA** | `/direct-build` | 5-Pillar Full Compliance + Playwright MCP | Production Landing Page |
+| **🚀 FULL AUTO** | `/build-site` | **Autonomous Chained End-to-End** | Seluruh docs/ + Kode Siap Produksi |
+| **1. Riset** | `/collect-lead-master-data` | Modular / Per-Tahap | `docs/00-master-data.md` |
+| **2. Visual** | `/extract-design-direction` | Modular / Per-Tahap | `docs/01-design-direction.md` |
+| **3. Brand** | `/generate-brand-identity` | Modular / Per-Tahap | `docs/02-brand-identity.md` |
+| **4. Konsep** | `/generate-website-concept` | Modular / Per-Tahap | `docs/03-website-concept.md` |
+| **4b. Kalibrasi** | `/harmonize-design-reference` | Modular (PLAN Mode) | Overwrite `docs/03` |
+| **5. Desain** | `/generate-design-system` | Modular / Per-Tahap | `docs/04` & `docs/design.md` |
+| **6. PRD** | `/generate-prd` | Modular / Per-Tahap | `docs/05-prd.md` |
+| **7. Audit** | `/audit-and-enhance-docs` | Modular / Per-Tahap | `docs/06-strategic-audit.md` |
+| **A. Arsitektur** | `/init-engineering-rules` | Modular / Per-Tahap | `.agents/rules/engineering-architecture.md` |
+| **B. Build & QA** | `/direct-build` | Modular / Per-Tahap | Production Landing Page + QA |
 
 > [!TIP]
 > Anda juga dapat menjalankan skrip status terminal kapan saja langsung dari bash shell:  

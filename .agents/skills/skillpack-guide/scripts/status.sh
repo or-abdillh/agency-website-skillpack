@@ -123,10 +123,11 @@ echo ""
 echo -e "${MAGENTA}----------------------------------------------------------------------${RESET}"
 
 if [ -n "$NEXT_STEP" ]; then
-    echo -e "${BOLD}${CYAN}⚡ LANGKAH SELANJUTNYA YANG DIREKOMENDASIKAN:${RESET}"
-    echo -e "   Target: ${BOLD}${WHITE}${NEXT_STEP}${RESET}"
-    echo -e "   Perintah AI : ${YELLOW}${NEXT_CMD}${RESET}"
-    echo -e "   Keterangan  : ${GRAY}${NEXT_DESC}${RESET}"
+    echo -e "${BOLD}${CYAN}⚡ REKOMENDASI EKSEKUSI:${RESET}"
+    echo -e "   ${BOLD}${WHITE}Opsi A (Full Auto):${RESET} Ketik ${YELLOW}/build-site${RESET} ${GRAY}(eksekusi end-to-end tanpa henti)${RESET}"
+    echo -e "   ${BOLD}${WHITE}Opsi B (Modular)  :${RESET} Target: ${WHITE}${NEXT_STEP}${RESET}"
+    echo -e "                       Perintah AI : ${YELLOW}${NEXT_CMD}${RESET}"
+    echo -e "                       Keterangan  : ${GRAY}${NEXT_DESC}${RESET}"
 else
     echo -e "${BOLD}${GREEN}🎉 SELURUH PIPELINE TELAH SELESAI!${RESET}"
     echo -e "   Landing page telah dibangun dan siap untuk validasi produksi/deployment."
