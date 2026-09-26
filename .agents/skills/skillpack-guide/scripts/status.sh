@@ -120,6 +120,10 @@ else
 fi
 
 echo ""
+echo -e "${BOLD}--- Fase 4: Client Acquisition & Outreach (docs/) ---${RESET}"
+print_item "8" "Client Acquisition & Cold Outreach" "docs/07-cold-outreach.md" "/cold-outreach" "Menyusun playbook cold email, Instagram DM, starter hooks, dan follow-up berbasis riset." "antislop-copywriting + cold-email + copywriting" "true"
+
+echo ""
 echo -e "${MAGENTA}----------------------------------------------------------------------${RESET}"
 
 if [ -n "$NEXT_STEP" ]; then
@@ -129,8 +133,13 @@ if [ -n "$NEXT_STEP" ]; then
     echo -e "                       Perintah AI : ${YELLOW}${NEXT_CMD}${RESET}"
     echo -e "                       Keterangan  : ${GRAY}${NEXT_DESC}${RESET}"
 else
-    echo -e "${BOLD}${GREEN}🎉 SELURUH PIPELINE TELAH SELESAI!${RESET}"
-    echo -e "   Landing page telah dibangun dan siap untuk validasi produksi/deployment."
+    if ! check_file "docs/07-cold-outreach.md"; then
+        echo -e "${BOLD}${GREEN}🎉 LANDING PAGE BERHASIL DIBANGUN!${RESET}"
+        echo -e "   ${CYAN}Langkah Monetisasi Klien:${RESET} Ketik ${YELLOW}/cold-outreach${RESET} untuk menyusun draft Cold Email & IG DM siap pitch!"
+    else
+        echo -e "${BOLD}${GREEN}🎉 SELURUH PIPELINE & PLAYBOOK OUTREACH TELAH SELESAI!${RESET}"
+        echo -e "   Landing page dan playbook penjangkauan dingin telah siap untuk pitch klien."
+    fi
 fi
 
 echo -e "${MAGENTA}======================================================================${RESET}"

@@ -5,7 +5,7 @@ description: Membantu developer memahami alur lengkap, mendiagnosis status pipel
 
 Kamu bertindak sebagai **Principal Workflow Architect & Developer Experience (DX) Guide**.
 
-Tujuan:
+## Tujuan:
 Membimbing developer memahami dan menjalankan alur kerja Agency Website Skill Pack secara efisien melalui terminal/chat AI, mendiagnosis status progres proyek saat ini secara dinamis, memastikan kepatuhan terhadap **5-Pillar Quality Armor** (`frontend-design`, `antislop-ui`, `antislop-human`, `antislop-copywriting`, `antislop-layoutmobile`), dan merekomendasikan langkah konkret berikutnya tanpa kebingungan.
 
 ---
@@ -25,6 +25,7 @@ Setiap kali skill ini dipanggil (via `/skillpack-guide`, `/workflow-guide`, atau
    - `docs/06-strategic-audit.md` (Step 7)
    - `.agents/rules/engineering-architecture.md` (Phase A - Arch Lock)
    - Berkas source code aplikasi / pages index (Phase B - Build)
+   - `docs/07-cold-outreach.md` (Step 8 / Client Acquisition)
 
 2. **Tampilkan Pipeline Scoreboard Visual:**
    Sajikan status kemajuan proyek saat ini dengan indikator jelas:
@@ -33,7 +34,7 @@ Setiap kali skill ini dipanggil (via `/skillpack-guide`, `/workflow-guide`, atau
    - `[ ] PENDING:` Langkah yang belum dijalankan.
 
 3. **Berikan Panduan Langkah Berikutnya (Next Recommended Action):**
-   - Tuliskan perintah slash persis yang harus diketikkan developer (misal: `/generate-brand-identity`).
+   - Tuliskan perintah slash persis yang harus diketikkan developer (misal: `/generate-brand-identity` atau `/cold-outreach`).
    - Jelaskan input yang dibutuhkan (misal: nama bisnis, lampiran screenshot logo/feed, atau pilihan framework).
    - Berikan tips kuratorial anti-slop yang relevan berdasarkan **5-Pillar Quality Armor** (misal: uji kontras via `contrast-check.py`, batasan dose caps, atau no AI buzzwords).
 
@@ -56,6 +57,7 @@ Setiap kali skill ini dipanggil (via `/skillpack-guide`, `/workflow-guide`, atau
 - [ ] **Step 7: Strategic Audit & Trust Building** (`/audit-and-enhance-docs`)
 - [ ] **Phase A: Engineering Architecture Lock** (`/init-engineering-rules`)
 - [ ] **Phase B: Direct Build & Playwright QA** (`/direct-build`)
+- [ ] **Step 8: Client Acquisition & Cold Outreach** (`/cold-outreach`)
 
 ---
 
@@ -103,6 +105,7 @@ Setiap langkah dalam pipeline ini dipagari oleh 5 skill spesialis:
 | **7. Audit** | `/audit-and-enhance-docs` | Modular / Per-Tahap | `docs/06-strategic-audit.md` |
 | **A. Arsitektur** | `/init-engineering-rules` | Modular / Per-Tahap | `.agents/rules/engineering-architecture.md` |
 | **B. Build & QA** | `/direct-build` | Modular / Per-Tahap | Production Landing Page + QA |
+| **8. Outreach** | `/cold-outreach` | Modular / Monetisasi | `docs/07-cold-outreach.md` (Email & DM Suite) |
 
 > [!TIP]
 > Anda juga dapat menjalankan skrip status terminal kapan saja langsung dari bash shell:  
