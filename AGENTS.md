@@ -83,6 +83,7 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
     ├── 05-generate-design-system/    # Token CSS variables, 04-design-system.md & docs/design.md
     ├── 06-generate-prd/              # Spesifikasi MoSCoW, NFR, checklist pitch
     ├── 07-strategic-audit/           # Audit diferensiasi & fitur interaktif premium
+    ├── generate-cold-outreach/       # Playbook cold outreach (Email & DM) berbasis solusi & riset
     ├── init-engineering-rules/       # Generator aturan arsitektur ketat (multi-framework)
     ├── 08-direct-build/              # Eksekusi koding langsung + Playwright Visual QA
     │
@@ -116,6 +117,7 @@ Developer dapat memanggil perintah slash satuan kapan saja untuk melakukan revis
 - `/generate-design-system` $\rightarrow$ Regenerasi `docs/04` dan `docs/design.md`.
 - `/generate-prd` $\rightarrow$ Perbarui spesifikasi `docs/05-prd.md`.
 - `/audit-and-enhance-docs` $\rightarrow$ Perbarui audit diferensiasi `docs/06-strategic-audit.md`.
+- `/cold-outreach` $\rightarrow$ Susun playbook penjangkauan dingin (Email, DM, Starter Hooks, Response Matrix, Follow-up) di `docs/07-cold-outreach.md`.
 - `/init-engineering-rules` $\rightarrow$ Ganti stack framework di `.agents/rules/engineering-architecture.md`.
 - `/direct-build` $\rightarrow$ Eksekusi koding ulang dan Playwright Visual QA.
 
@@ -128,8 +130,9 @@ Developer dapat memanggil perintah slash satuan kapan saja untuk melakukan revis
 - **DILARANG** menaruh emoji dekoratif pada teks antarmuka, heading, atau tombol (`antislop-ui`).
 - **DILARANG** mengabaikan rasio kontras WCAG AA: wajib minimal 4.5:1 untuk teks normal dan 3.0:1 untuk non-teks (`antislop-human`).
 - **DILARANG** menyetel `outline: none` tanpa menyertakan pengganti style `:focus-visible` yang berkontras tinggi (`antislop-human`).
-- **DILARANG** menggunakan kosakata AI kosong (*unlock, elevate, empower, seamless, revolutionary, dll.*) dan dilarang menggunakan em dash (`—` / `--`) pada copywriting (`antislop-copywriting`).
+- **DILARANG** menggunakan kosakata AI kosong (*unlock, elevate, empower, seamless, revolutionary, dll.*) dan dilarang menggunakan em dash (`—` / `--`) pada copywriting maupun outreach pitch (`antislop-copywriting`).
 - **DILARANG** mengarang angka statistik, bukti testimoni palsu, atau klaim reputasi yang tidak berdasar (`antislop-copywriting`).
+- **DILARANG** mengirimkan cold outreach berupa penawaran jasa generik template tanpa solusi konkret, tanpa teaser konsep visual & style, atau tanpa storyline percakapan adaptif (`cold-email` & `copywriting`).
 - **DILARANG** membuat layout mobile hanya berupa tampilan desktop yang dikecilkan, dilarang menggunakan `100vh` kaku pada mobile (wajib `dvh` atau `auto`), dan dilarang menyisakan kebocoran scroll horizontal pada resolusi sempit (`antislop-layoutmobile`).
 - **DILARANG** membuat target sentuh interaktif lebih kecil dari 44 × 44 px pada mobile (`antislop-layoutmobile`).
 - **DILARANG** menambahkan library UI berat tanpa ada mandat di dokumen arsitektur.
