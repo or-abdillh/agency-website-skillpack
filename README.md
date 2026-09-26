@@ -99,12 +99,13 @@ Skill pack ini mengubah peran agen AI dari sekadar *coding assistant* menjadi **
 4. **Principal Design System Architect:** Memetakan CSS variables, skala tipografi Google Fonts kontras tinggi, dan menghasilkan berkas spesifikasi teknikal mendalam (`docs/design.md`).
 5. **Senior Technical PM & UX Auditor:** Menyusun PRD dengan batasan MoSCoW tegas dan menyuntikkan fitur interaktif diferensiasi (*frontend-only*) (`docs/05` & `docs/06`).
 6. **Lead Engineer Executor:** Mengunci arsitektur teknis secara ketat (`engineering-architecture.md`), mengeksekusi kode secara langsung (`direct-build`), dan memvalidasi tampilan via Playwright MCP.
+7. **Lead Outbound & Conversion Strategist:** Menyusun playbook penjangkauan dingin (Cold Email, Instagram DM, 4 Starter Hooks, dan Response Matrix) berbasis solusi dan konsep visual hasil riset untuk segera memonetisasi landing page ke prospek bisnis (`docs/07-cold-outreach.md`).
 
 ---
 
 ## 🚀 Alur Kerja Pipeline (End-to-End)
 
-Proses pengembangan dibagi ke dalam **3 Fase Mengikat**:
+Proses pengembangan dibagi ke dalam **4 Fase Terpadu**:
 
 ```mermaid
 flowchart TD
@@ -138,7 +139,15 @@ flowchart TD
         B1 --> PW --> OUT
     end
 
+    subgraph Fase4["FASE 4: Client Acquisition & Cold Outreach (docs/)"]
+        CO["generate-cold-outreach\n(Cold Email, IG DM, 4 Starter Hooks & Response Matrix)"]
+        DOC7["docs/07-cold-outreach.md\n(Playbook penjangkauan dingin siap kirim)"]
+        CO --> DOC7
+    end
+
     Fase1 --> Fase2 --> Fase3
+    OUT -. Langkah Monetisasi .-> Fase4
+    Fase1 -. Pre-Build Teaser .-> Fase4
 ```
 
 ---
@@ -159,6 +168,7 @@ flowchart TD
 | [`/audit-and-enhance-docs`](.agents/skills/07-strategic-audit/SKILL.md) | Principal UX Auditor | `docs/06-strategic-audit.md` | Menyuntikkan 1–2 fitur interaktif diferensiasi (*frontend-only*) dan arsitektur trust building non-generik. |
 | [`/init-engineering-rules`](.agents/skills/init-engineering-rules/SKILL.md) | Principal Engineering Architect | `.agents/rules/engineering-architecture.md` | Menginisiasi dan mengunci 14 bab aturan teknis mengikat (`trigger: always_on`) sesuai framework & styling pilihan. |
 | [`/direct-build`](.agents/skills/08-direct-build/SKILL.md) | Lead Product Engineer | Kode aplikasi lengkap + Visual QA | Menulis seluruh kode frontend produksi berbasis `design.md` dan memvalidasinya secara realtime via Playwright MCP. |
+| [`/cold-outreach`](.agents/skills/generate-cold-outreach/SKILL.md) | Lead Outbound Strategist | `docs/07-cold-outreach.md` | Menyusun playbook penjangkauan dingin (Cold Email, IG DM, 4 Starter Hooks, Response Matrix, dan Follow-up) berbasis solusi & riset. |
 | **`frontend-design`** | Design Studio Lead | Guardrails Estetika Subjek | Menghindari klise AI (*no cream+terracotta, no black+acid green, no SaaS card kit*), fokus *Spend Boldness in One Place*. |
 | **`antislop-ui`** | Visual Quality Gatekeeper | Dose Caps & Decoration Filter | Menegakkan batas dosis ketat: glassmorphism maks 1–2, glow maks 1–2, hierarki radius, nol emoji pada teks UI. |
 | **`antislop-human`** | Accessibility Specialist | Validasi Kontras WCAG AA | Memvalidasi kontras teks 4.5:1 dan non-teks 3:1 via Python `contrast-check.py`, navigasi keyboard `:focus-visible`. |
