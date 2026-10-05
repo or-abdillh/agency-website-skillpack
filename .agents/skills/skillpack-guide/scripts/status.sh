@@ -67,7 +67,25 @@ print_item() {
 
 echo -e "${BOLD}--- Fase 1: Discovery & Strategy (docs/) ---${RESET}"
 
-print_item "1" "Master Data Collection" "docs/00-master-data.md" "/collect-lead-master-data" "Mengumpulkan profil bisnis, ulasan Google Maps, dan katalog produk lokal." "Data riil Google Maps, no sintetis"
+if check_file "docs/00-master-data.md"; then
+    if check_file "docs/00-brand-initiation.md"; then
+        echo -e "  ${GREEN}[✓] Step 1:${RESET} ${WHITE}Master Data & Brand Initiation${RESET} ${GRAY}(docs/00-master-data.md & docs/00-brand-initiation.md)${RESET}"
+    else
+        echo -e "  ${GREEN}[✓] Step 1:${RESET} ${WHITE}Master Data Collection${RESET} ${GRAY}(docs/00-master-data.md)${RESET}"
+    fi
+else
+    if [ -z "$NEXT_STEP" ]; then
+        NEXT_STEP="Step 1: Master Data / Brand Initiation"
+        NEXT_CMD="/collect-lead-master-data (Eksis) ATAU /breakdown-brand-draft (Brand Baru)"
+        NEXT_DESC="Riset bisnis lokal eksis ATAU dekonstruksi draft inisiasi brand baru dengan komparasi kompetitor riil."
+        echo -e "  ${CYAN}[→] Step 1:${RESET} ${BOLD}${WHITE}Master Data / Brand Initiation${RESET} ${YELLOW}<- NEXT ACTION${RESET}"
+        echo -e "      ${GRAY}• Bisnis Eksis  : ${YELLOW}/collect-lead-master-data${RESET}"
+        echo -e "      ${GRAY}• Inisiasi Baru : ${YELLOW}/breakdown-brand-draft${RESET}"
+        echo -e "      ${BLUE}↳ Quality Armor:${RESET} ${GRAY}Komparasi Kompetitor Riil + antislop-copywriting (No Fake Reviews)${RESET}"
+    else
+        echo -e "  ${GRAY}[ ] Step 1: Master Data (/collect-lead-master-data ATAU /breakdown-brand-draft)${RESET}"
+    fi
+fi
 print_item "2" "Visual & Color Extraction" "docs/01-design-direction.md" "/extract-design-direction" "Mengekstrak visual moodboard, palet warna, dan estetika dari logo & feed IG." "antislop-human (WCAG AA via contrast-check.py) + antislop-ui"
 print_item "3" "Brand Identity & Positioning" "docs/02-brand-identity.md" "/generate-brand-identity" "Menyusun positioning brand, headline hook emosional, dan persona pelanggan." "antislop-copywriting (no AI buzzwords, no em-dash, kalimat aktif)"
 print_item "4" "Website Concept & Art Direction" "docs/03-website-concept.md" "/generate-website-concept" "Menyusun blueprint hero showstopper anti-slop, storytelling, dan ritme section." "frontend-design (subject grounding) + antislop-ui (glass & glow maks 1-2)"

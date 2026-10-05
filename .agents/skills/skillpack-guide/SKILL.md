@@ -95,7 +95,8 @@ Setiap langkah dalam pipeline ini dipagari oleh 5 skill spesialis:
 | Tahap | Perintah Slash | Mode Eksekusi | Output |
 |---|---|---|---|
 | **🚀 FULL AUTO** | `/build-site` | **Autonomous Chained End-to-End** | Seluruh docs/ + Kode Siap Produksi |
-| **1. Riset** | `/collect-lead-master-data` | Modular / Per-Tahap | `docs/00-master-data.md` |
+| **1a. Riset Eksis** | `/collect-lead-master-data` | Modular / Per-Tahap | `docs/00-master-data.md` (Bisnis Eksis) |
+| **1b. Inisiasi Baru**| `/breakdown-brand-draft` | Modular / Brainstorming | `docs/00-master-data.md` & `00-brand-initiation.md` |
 | **2. Visual** | `/extract-design-direction` | Modular / Per-Tahap | `docs/01-design-direction.md` |
 | **3. Brand** | `/generate-brand-identity` | Modular / Per-Tahap | `docs/02-brand-identity.md` |
 | **4. Konsep** | `/generate-website-concept` | Modular / Per-Tahap | `docs/03-website-concept.md` |
