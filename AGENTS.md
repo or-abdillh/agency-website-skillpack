@@ -75,7 +75,8 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
 │   └── build-site.md                 # Workflow end-to-end autonomous chained execution
 └── skills/
     ├── skillpack-guide/              # Workflow copilot & diagnosa status pipeline terminal
-    ├── 01-collect-lead-master-data/  # Riset intelijen bisnis lokal
+    ├── 01-collect-lead-master-data/  # Riset intelijen bisnis lokal (bisnis eksis)
+    ├── breakdown-brand-draft/        # Dekonstruksi draft ide brand baru & riset komparasi kompetitor
     ├── 02-extract-design-direction/  # Ekstraksi visual & palet dari logo/IG
     ├── 03-generate-brand-identity/   # Positioning, tagline, tone of voice
     ├── 04-generate-website-concept/  # Hero showstopper blueprint, storytelling (Agency Level)
@@ -100,8 +101,8 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
 ## 4. Dua Mode Eksekusi Alur Kerja
 
 ### Mode 1: Full-Auto Autonomous Orchestrator (`/build-site`)
-- **Perintah Tunggal:** Cukup ketik **/build-site [Nama Bisnis, Kategori, Kota]**.
-- **Perilaku:** AI otomatis mengeksekusi Step 1 s.d. Phase B secara berkesinambungan tanpa henti.
+- **Perintah Tunggal:** Cukup ketik **/build-site [Nama Bisnis/Brand, Kategori/Niche, Kota/Pasar]**.
+- **Perilaku:** AI otomatis mengeksekusi Step 1 s.d. Phase B secara berkesinambungan tanpa henti (mengenali secara adaptif apakah target merupakan bisnis eksis via `collect-lead-master-data` atau brand baru via `breakdown-brand-draft`).
 - **In-Line Interactive Gates:**
   - *Gate Logo/Feed:* Jika logo tidak diunggah, AI menanyakan opsi untuk melampirkan sekarang atau mengizinkan AI merumuskan palet warna secara cerdas dari data industri, lalu langsung lanjut.
   - *Gate UI Reference:* Jika tidak ada screenshot UI inspirasi, tahap 4b dilewati (*skip*) secara otomatis.
@@ -109,7 +110,8 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
 
 ### Mode 2: Modular / Granular Commands (Pembaruan Terisolasi)
 Developer dapat memanggil perintah slash satuan kapan saja untuk melakukan revisi atau regenerasi terfokus pada berkas tertentu:
-- `/collect-lead-master-data` $\rightarrow$ Perbarui profil `docs/00-master-data.md`.
+- `/collect-lead-master-data` $\rightarrow$ Riset bisnis lokal eksis ke `docs/00-master-data.md`.
+- `/breakdown-brand-draft` $\rightarrow$ Dekonstruksi draft ide brand baru & komparasi pasar riil ke `docs/00-master-data.md` & `docs/00-brand-initiation.md`.
 - `/extract-design-direction` $\rightarrow$ Re-ekstrak warna `docs/01-design-direction.md`.
 - `/generate-brand-identity` $\rightarrow$ Kalibrasi ulang positioning `docs/02-brand-identity.md`.
 - `/generate-website-concept` $\rightarrow$ Romba k ulang konsep `docs/03-website-concept.md`.

@@ -27,6 +27,7 @@ Mengeksekusi pembuatan website bisnis lokal berkualitas agensi kelas dunia secar
    - Jika informasi sudah tersedia atau dapat diturunkan dari tahap sebelumnya, agen dilarang meminta konfirmasi basa-basi yang memperlambat eksekusi.
 
 3. **Smart Fallback & Skip Logic:**
+   - **Entry Gate (Step 1):** Jika target adalah brand baru yang baru diinisiasi / drafting idea, jalankan skill `breakdown-brand-draft` untuk membedah ide, mencari 3–5 benchmark kompetitor riil sebagai komparasi pembumi, dan menyusun Greenfield Master Data serta blueprint inisiasi. Jika target adalah bisnis lokal yang sudah eksis, jalankan `collect-lead-master-data`.
    - **Aset Visual (Step 2):** Jika pengguna belum melampirkan logo atau screenshot feed IG, tanyakan secara in-line: apakah ingin melampirkannya sekarang, atau mengizinkan AI mengekstrak dan merumuskan palet warna autentik berbasis kategori industri dan profil kompetitor di `docs/00-master-data.md`.
    - **Screenshot Referensi UI (Step 4b):** Tahap ini bersifat opsional. Jika pengguna tidak melampirkan gambar referensi UI, lewati (*skip*) otomatis dan langsung masuk ke Step 5 (`docs/design.md`).
    - **Arsitektur Teknis (Phase A):** Periksa `.agents/rules/engineering-architecture.md`. Jika sudah terkunci, langsung lanjut ke Phase B (`/direct-build`). Jika belum ada, ajukan pilihan framework preset secara in-line, kunci aturan, lalu segera eksekusi build.
@@ -43,10 +44,11 @@ Mengeksekusi pembuatan website bisnis lokal berkualitas agensi kelas dunia secar
 
 ### Alur Eksekusi Pipeline Terpadu:
 
-#### Step 1: Master Data Collection (`docs/00-master-data.md`)
-- Periksa apakah nama bisnis, kategori, dan kota sudah diberikan oleh user. Jika belum, tanyakan langsung.
-- Kumpulkan data profil, ulasan Google Maps riil, dan celah kompetitor lokal terdekat.
-- Tulis `docs/00-master-data.md` dengan header SemVer dan langsung lanjut ke Step 2.
+#### Step 1: Master Data & Brand Initiation Gate (`docs/00-master-data.md`)
+- Periksa tipe target:
+  - **Jalur A (Bisnis Eksis):** Kumpulkan data profil, ulasan Google Maps riil, dan celah kompetitor lokal terdekat via `collect-lead-master-data`.
+  - **Jalur B (Brand Baru / Brainstorming Draft):** Jalankan `breakdown-brand-draft` untuk membedah nama, niche, dan ide penawaran; lakukan web search terhadap 3–5 benchmark kompetitor riil sebagai komparasi pembumi (market grounding); rumuskan First-Day Trust Strategy tanpa klaim palsu; lalu hasilkan `docs/00-master-data.md` dan `docs/00-brand-initiation.md`.
+- Tulis dokumen dengan header SemVer dan langsung lanjut ke Step 2.
 
 #### Step 2: Visual & Color Extraction (`docs/01-design-direction.md`)
 - Periksa apakah ada attachment logo/feed. Jika tidak ada, jalankan mekanisme *Smart Fallback* di atas.
