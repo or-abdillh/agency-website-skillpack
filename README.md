@@ -145,7 +145,14 @@ flowchart TD
         CO --> DOC7
     end
 
+    subgraph Fase5["FASE 5: Dokumentasi Proyek Human-Friendly"]
+        RD["generate-project-readme\n(Sintesis @docs/ + stack & struktur kode)"]
+        RDM["README.md Proyek\n(Dokumentasi komprehensif, human-friendly & anti-slop)"]
+        RD --> RDM
+    end
+
     Fase1 --> Fase2 --> Fase3
+    OUT -. Dokumentasi Proyek .-> Fase5
     OUT -. Langkah Monetisasi .-> Fase4
     Fase1 -. Pre-Build Teaser .-> Fase4
 ```
@@ -169,6 +176,7 @@ flowchart TD
 | [`/init-engineering-rules`](.agents/skills/init-engineering-rules/SKILL.md) | Principal Engineering Architect | `.agents/rules/engineering-architecture.md` | Menginisiasi dan mengunci 14 bab aturan teknis mengikat (`trigger: always_on`) sesuai framework & styling pilihan. |
 | [`/direct-build`](.agents/skills/08-direct-build/SKILL.md) | Lead Product Engineer | Kode aplikasi lengkap + Visual QA | Menulis seluruh kode frontend produksi berbasis `design.md` dan memvalidasinya secara realtime via Playwright MCP. |
 | [`/cold-outreach`](.agents/skills/generate-cold-outreach/SKILL.md) | Lead Outbound Strategist | `docs/07-cold-outreach.md` | Menyusun playbook penjangkauan dingin (Cold Email, IG DM, 4 Starter Hooks, Response Matrix, dan Follow-up) berbasis solusi & riset. |
+| [`/generate-project-readme`](.agents/skills/generate-project-readme/SKILL.md) | Principal Technical Writer | Proyek `README.md` Komprehensif | Membaca seluruh `@docs/` dan arsitektur kode untuk menghasilkan dokumentasi proyek komprehensif, human-friendly, berstandar agensi, dan bebas klise AI. |
 | **`frontend-design`** | Design Studio Lead | Guardrails Estetika Subjek | Menghindari klise AI (*no cream+terracotta, no black+acid green, no SaaS card kit*), fokus *Spend Boldness in One Place*. |
 | **`antislop-ui`** | Visual Quality Gatekeeper | Dose Caps & Decoration Filter | Menegakkan batas dosis ketat: glassmorphism maks 1–2, glow maks 1–2, hierarki radius, nol emoji pada teks UI. |
 | **`antislop-human`** | Accessibility Specialist | Validasi Kontras WCAG AA | Memvalidasi kontras teks 4.5:1 dan non-teks 3:1 via Python `contrast-check.py`, navigasi keyboard `:focus-visible`. |
