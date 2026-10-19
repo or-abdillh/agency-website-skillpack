@@ -58,6 +58,7 @@ Setiap kali skill ini dipanggil (via `/skillpack-guide`, `/workflow-guide`, atau
 - [ ] **Phase A: Engineering Architecture Lock** (`/init-engineering-rules`)
 - [ ] **Phase B: Direct Build & Playwright QA** (`/direct-build`)
 - [ ] **Step 8: Client Acquisition & Cold Outreach** (`/cold-outreach`)
+- [ ] **Step 9: Project README Documentation** (`/generate-project-readme`)
 
 ---
 
@@ -107,6 +108,7 @@ Setiap langkah dalam pipeline ini dipagari oleh 5 skill spesialis:
 | **A. Arsitektur** | `/init-engineering-rules` | Modular / Per-Tahap | `.agents/rules/engineering-architecture.md` |
 | **B. Build & QA** | `/direct-build` | Modular / Per-Tahap | Production Landing Page + QA |
 | **8. Outreach** | `/cold-outreach` | Modular / Monetisasi | `docs/07-cold-outreach.md` (Email & DM Suite) |
+| **9. README** | `/generate-project-readme` | Modular / Dokumentasi | Root `README.md` Proyek Komprehensif |
 
 > [!TIP]
 > Anda juga dapat menjalankan skrip status terminal kapan saja langsung dari bash shell:  

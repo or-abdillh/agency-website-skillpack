@@ -142,6 +142,14 @@ echo -e "${BOLD}--- Fase 4: Client Acquisition & Outreach (docs/) ---${RESET}"
 print_item "8" "Client Acquisition & Cold Outreach" "docs/07-cold-outreach.md" "/cold-outreach" "Menyusun playbook cold email, Instagram DM, starter hooks, dan follow-up berbasis riset." "antislop-copywriting + cold-email + copywriting" "true"
 
 echo ""
+echo -e "${BOLD}--- Fase 5: Project Documentation & Handover ---${RESET}"
+if [ -f "README.md" ] && ! grep -q "Agency Website Skill Pack: Anti-Slop Landing Page Engine" "README.md"; then
+    echo -e "  ${GREEN}[✓] Step 9:${RESET} ${WHITE}Project README Documentation${RESET} ${GRAY}(README.md)${RESET}"
+else
+    echo -e "  ${GRAY}[ ] Step 9: Project README Documentation (/generate-project-readme)${RESET}"
+fi
+
+echo ""
 echo -e "${MAGENTA}----------------------------------------------------------------------${RESET}"
 
 if [ -n "$NEXT_STEP" ]; then
@@ -151,12 +159,12 @@ if [ -n "$NEXT_STEP" ]; then
     echo -e "                       Perintah AI : ${YELLOW}${NEXT_CMD}${RESET}"
     echo -e "                       Keterangan  : ${GRAY}${NEXT_DESC}${RESET}"
 else
+    echo -e "${BOLD}${GREEN}🎉 LANDING PAGE & TAHAPAN INTI SELESAI!${RESET}"
+    if [ ! -f "README.md" ] || grep -q "Agency Website Skill Pack: Anti-Slop Landing Page Engine" "README.md"; then
+        echo -e "   ${CYAN}Dokumentasi Proyek:${RESET} Ketik ${YELLOW}/generate-project-readme${RESET} untuk membuat README.md human-friendly dari seluruh @docs/!"
+    fi
     if ! check_file "docs/07-cold-outreach.md"; then
-        echo -e "${BOLD}${GREEN}🎉 LANDING PAGE BERHASIL DIBANGUN!${RESET}"
-        echo -e "   ${CYAN}Langkah Monetisasi Klien:${RESET} Ketik ${YELLOW}/cold-outreach${RESET} untuk menyusun draft Cold Email & IG DM siap pitch!"
-    else
-        echo -e "${BOLD}${GREEN}🎉 SELURUH PIPELINE & PLAYBOOK OUTREACH TELAH SELESAI!${RESET}"
-        echo -e "   Landing page dan playbook penjangkauan dingin telah siap untuk pitch klien."
+        echo -e "   ${CYAN}Langkah Monetisasi:${RESET} Ketik ${YELLOW}/cold-outreach${RESET} untuk menyusun draft Cold Email & IG DM siap pitch!"
     fi
 fi
 
