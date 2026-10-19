@@ -87,6 +87,7 @@ Jika terjadi inkonsistensi atau kontradiksi antar dokumen selama fase pengembang
     ├── generate-cold-outreach/       # Playbook cold outreach (Email & DM) berbasis solusi & riset
     ├── init-engineering-rules/       # Generator aturan arsitektur ketat (multi-framework)
     ├── 08-direct-build/              # Eksekusi koding langsung + Playwright Visual QA
+    ├── generate-project-readme/      # Generator dokumentasi README.md proyek komprehensif & human-friendly
     │
     │   # --- The 5-Pillar External Quality Armor ---
     ├── frontend-design/              # Karakter estetika subjek, anti-klise AI, restriksi disiplin
@@ -122,6 +123,7 @@ Developer dapat memanggil perintah slash satuan kapan saja untuk melakukan revis
 - `/cold-outreach` $\rightarrow$ Susun playbook penjangkauan dingin (Email, DM, Starter Hooks, Response Matrix, Follow-up) di `docs/07-cold-outreach.md`.
 - `/init-engineering-rules` $\rightarrow$ Ganti stack framework di `.agents/rules/engineering-architecture.md`.
 - `/direct-build` $\rightarrow$ Eksekusi koding ulang dan Playwright Visual QA.
+- `/generate-project-readme` $\rightarrow$ Hasilkan `README.md` proyek komprehensif & human-friendly berdasarkan seluruh dokumen di `docs/`.
 
 ---
 

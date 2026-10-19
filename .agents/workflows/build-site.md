@@ -99,6 +99,7 @@ Workflow `/build-site` baru dinyatakan **SELESAI** apabila:
 4. Validasi visual real-time via Playwright MCP membuktikan antarmuka responsif tanpa horizontal scroll leak dan memenuhi standar agensi kelas dunia non-slop.
 
 > [!TIP]
-> **Langkah Monetisasi Klien (Post-Build Pitch):**  
-> Setelah landing page berhasil di-build dan siap dipamerkan, jalankan **/cold-outreach** untuk menghasilkan playbook penjangkauan dingin (Cold Email, Instagram DM, 4 Starter Hooks, dan Response Matrix) guna mem-pitch hasil kerja nyata ini langsung ke pemilik bisnis!
+> **Langkah Lanjutan Pasca-Build (Dokumentasi & Monetisasi):**  
+> 1. **Dokumentasikan Proyek:** Jalankan **/generate-project-readme** untuk mensintesis seluruh dokumen di `docs/` menjadi berkas `README.md` proyek yang komprehensif, terstruktur, dan ramah dibaca manusia (*human-friendly*).  
+> 2. **Monetisasi & Pitching:** Jalankan **/cold-outreach** untuk menghasilkan playbook penjangkauan dingin (Cold Email, Instagram DM, 4 Starter Hooks, dan Response Matrix) guna mem-pitch hasil kerja nyata ini langsung ke pemilik bisnis!
 
